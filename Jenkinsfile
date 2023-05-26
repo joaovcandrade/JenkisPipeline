@@ -1,24 +1,13 @@
 pipeline {
-    agent  any
+    agent any
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                sh 'python3 --version'
-            }
-        }
-        stage('test') {
-            steps {
-                sh 'python3 --version'
-            }
-        }
-        stage('deploy') {
-            steps {
-                sh 'python3 --version'
-            }
-        }
-        stage('stage4') {
-            steps {
-                sh 'python3 --version'
+                sh 'echo "Hello World"'
+                sh '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                '''
             }
         }
     }
